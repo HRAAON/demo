@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190517 13:32:22.400" rpa="false">
+<suite id="s1" name="班级管理" source="D:\code\spj\spj2\tc\d-7年级1班\班级管理.robot">
+<test id="s1-t1" name="添加班级2 - tc000002">
+<kw name="Add School Class" library="pylib.SchoolClassLib">
+<arguments>
+<arg>1</arg>
+<arg>2班</arg>
+<arg>60</arg>
+</arguments>
+<assign>
+<var>${ret1}</var>
+</assign>
+<msg timestamp="20190517 13:32:23.054" level="INFO">{'msg': 'vcode format error:vcode error', 'retcode': 2}</msg>
+<msg timestamp="20190517 13:32:23.055" level="INFO">${ret1} = {'msg': 'vcode format error:vcode error', 'retcode': 2}</msg>
+<status status="PASS" starttime="20190517 13:32:22.787" endtime="20190517 13:32:23.055"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$ret1['retcode']==0</arg>
+</arguments>
+<msg timestamp="20190517 13:32:23.067" level="FAIL">'$ret1['retcode']==0' should be true.</msg>
+<status status="FAIL" starttime="20190517 13:32:23.055" endtime="20190517 13:32:23.067"></status>
+</kw>
+<kw name="Delete School Class" library="pylib.SchoolClassLib" type="teardown">
+<arguments>
+<arg>&amp;{ret1}[id]</arg>
+</arguments>
+<msg timestamp="20190517 13:32:23.068" level="FAIL">Dictionary '&amp;{ret1}' has no key 'id'.</msg>
+<status status="FAIL" starttime="20190517 13:32:23.068" endtime="20190517 13:32:23.069">Dictionary '&amp;{ret1}' has no key 'id'.</status>
+</kw>
+<status status="FAIL" starttime="20190517 13:32:22.776" endtime="20190517 13:32:23.069" critical="yes">'$ret1['retcode']==0' should be true.
+
+Also teardown failed:
+Dictionary '&amp;{ret1}' has no key 'id'.</status>
+</test>
+<status status="FAIL" starttime="20190517 13:32:22.407" endtime="20190517 13:32:23.070"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="班级管理">班级管理</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
